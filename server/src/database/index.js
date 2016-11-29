@@ -25,7 +25,6 @@ export const initializeDB = () => {
   db.authenticate()
     .then(function(err) {
       console.log(chalk.magenta('Database connection established.'))
-      //importAuth0Users()
     })
     .catch(function (err) {
       console.log('Unable to connect to the database:', err)
@@ -34,11 +33,14 @@ export const initializeDB = () => {
   db.sync()
     .then(function(err) {
       console.log(chalk.magenta('Table sync succesful!'))
+
+      console.log(chalk.yellow('Beginnig to populate db'))
+      populate()
+
     }, function (err) {
       console.log('An error occurred while creating the table:', err)
     })
 
-  //populate()
 }
 
 export default db

@@ -15,6 +15,7 @@ const options = () => {
 
 const auth0users = async () => {
   try {
+    console.log('fetching users from auth0')
     const result = await fetch(allUsersUrl, options())
     const data = await result.json()
     console.log('sync data')
@@ -41,6 +42,9 @@ const auth0users = async () => {
 
 const populate = async () => {
   try {
+
+    console.log('beginning db sync')
+
     const users = await auth0users()
 
     users.forEach( (user, index) => {
@@ -55,6 +59,9 @@ const populate = async () => {
         console.log(index)
       })
     })
+
+    console.log('sync complete!')
+
   } catch (error) {
     console.log('syncing error', error)
   }
