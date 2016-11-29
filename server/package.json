@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "update": "babel-node updateSchema.js",
-    "start": "nodemon --watch server/graphql/*.js --exec \"npm run update && babel-node src/index.js\"",
+    "start": "npm run update && babel-node src/index.js",
     "build": "npm run clean && cross-env NODE_ENV=production ./node_modules/.bin/babel ./src --out-dir ./build",
     "serve": "cross-env NODE_ENV=production node ./build/index.js",
     "clean": "rm -rf build && mkdir build"
