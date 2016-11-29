@@ -1,4 +1,3 @@
-
 var path = require('path');
 var findCacheDir = require('find-cache-dir');
 var relayPlugin = require('../plugins/relay');

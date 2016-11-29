@@ -65,21 +65,22 @@ plugins.build()
               return memo;
             }, {});
 
-  // Remove all content but keep the directory so that
-  // if you're in it, you don't end up in Trash
-  rimrafSync(paths.appBuild + '/*');
+    // Remove all content but keep the directory so that
+    // if you're in it, you don't end up in Trash
+    rimrafSync(paths.appBuild + '/*');
 
-  // Start the webpack build
-  build(previousSizeMap);
+    // Start the webpack build
+    build(previousSizeMap);
 
-  // Merge with the public folder
-  copyPublicFolder();
+    // Merge with the public folder
+    copyPublicFolder();
+  })
 })
-    .catch((err) => {
-        console.error(err);
-        console.log();
-        process.exit(1)
-    });
+.catch((err) => {
+    console.error(err);
+    console.log();
+    process.exit(1);
+});
 
 // Print a detailed summary of build files.
 function printFileSizes(stats, previousSizeMap) {

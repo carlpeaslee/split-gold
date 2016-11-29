@@ -28,4 +28,4 @@ server.use('/', permissionsMiddleware, graphQLHTTP((req)=>{
     }
   }))
 
-server.listen(config.graphql.port, () => console.log(chalk.green(`Server is listening on port ${config.graphql.port}`)))
+server.listen(config.port, () => console.log(chalk.green(`Server is listening on port ${config.port}`)))
