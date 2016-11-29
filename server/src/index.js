@@ -1,3 +1,5 @@
+require("babel-core/register");
+require("babel-polyfill");
 /* eslint-disable no-console, no-shadow */
 import path from 'path'
 import express from 'express'
